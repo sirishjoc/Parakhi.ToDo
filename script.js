@@ -1,13 +1,7 @@
 var count=0;
 var entry=[];
 		
-function handle(e){
-        if(e.keyCode === 13){
-            newdiv();
-        }
 
-        return false;
-    }
 function newdiv(){
 		count++;
 		var a=document.createElement('div');
