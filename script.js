@@ -1,20 +1,28 @@
 var count=0;
 var entry=[];
 		
+function handle(e){
+        if(e.keyCode === 13){
+            newdiv();
+        }
+
+        return false;
+    }
 function newdiv(){
-	count++;
-	var a=document.createElement('div');
-	var element=document.getElementById('myinput');
+		count++;
+		var a=document.createElement('div');
+		var element=document.getElementById('myinput');
+		
+		a.onclick = function (){
+			newfunc(this);
+		}
+		
+		a.id=count;
+		a.innerHTML=element.value+"<br >";
+		var x=document.getElementById('first');
+		x.appendChild(a);
+		element.value="";	
 	
-	a.onclick = function (){
-		newfunc(this);
-	}
-	
-	a.id=count;
-	a.innerHTML=element.value+"<br >";
-	var x=document.getElementById('first');
-	x.appendChild(a);
-	element.value="";
 }
 
 function newfunc(divElement){
