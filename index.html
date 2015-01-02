@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>New Div</title>
+	</head>
+	<body>
+		
+			<input  type="text" id="myinput" onchange="newdiv();">
+			
+			<br>To Do List
+			<!-- <input type="button" onclick="newdiv();" value="Click Me!"> -->
+		<script type="text/javascript">
+		var count=0;
+
+		function newfunc(divElement){
+			console.log(divElement);
+			var tempdiv = document.createElement('div');
+			tempdiv.id=divElement.id;
+			tempdiv.innerHTML = divElement.innerHTML;
+			var element=document.getElementById('second');
+			
+			element.appendChild(tempdiv);
+		}
+
+		function newdiv(){
+			count++;
+			var a=document.createElement('div');
+			var element=document.getElementById('myinput');
+			
+			a.onclick = function (){
+				newfunc(this);
+			}
+			
+			a.id=count;
+			a.innerHTML=element.value+"<br >";
+			var x=document.getElementById('first');
+			x.appendChild(a);
+			element.value="";
+		}
+
+		
+		</script>
+
+		<div id="first"></div>
+		<br><br>
+		Done List<div id = "second"></div>
+		
+		
+	</body>
+</html>
