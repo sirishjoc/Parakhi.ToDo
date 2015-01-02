@@ -21,27 +21,39 @@ function newdiv(){
 
 function newfunc(divElement){
 	console.log(divElement);
-	var state= true;
+			if((document.getElementById('0'+divElement.id) =='undefined') || (document.getElementById('0'+divElement.id) == null)) {
+				var tempdiv = document.createElement('div');
+				tempdiv.id= 0+divElement.id;	
+				console.log(tempdiv.id);
+				tempdiv.class = "done";			
+				tempdiv.innerHTML = divElement.innerHTML;
+				divElement.innerHTML="<strike>"+divElement.innerHTML+"</strike>";
+				var element=document.getElementById('second');
+				element.appendChild(tempdiv);
+			}
+
+
+	// var state= true;
 	
-	for(var i=0;i<entry.length;i++){
-		if(entry[i]==divElement.id){
-			state=false;
-		}
+	// for(var i=0;i<entry.length;i++){
+	// 	if(entry[i]==divElement.id){
+	// 		state=false;
+	// 	}
 
-	}
+	// }
 
-	if (state==true){
-		entry.push(divElement.id);
-		console.log(divElement.id);
-		var tempdiv = document.createElement('div');
-		tempdiv.id=divElement.id;
-		tempdiv.innerHTML = divElement.innerHTML;
-		divElement.innerHTML="<strike>"+divElement.innerHTML+"</strike>";
-		var element=document.getElementById('second');
+	// if (state==true){
+	// 	entry.push(divElement.id);
+	// 	console.log(divElement.id);
+	// 	var tempdiv = document.createElement('div');
+	// 	tempdiv.id=divElement.id;
+	// 	tempdiv.innerHTML = divElement.innerHTML;
+	// 	divElement.innerHTML="<strike>"+divElement.innerHTML+"</strike>";
+	// 	var element=document.getElementById('second');
 		
 		
-		element.appendChild(tempdiv);
-	}
+	// 	element.appendChild(tempdiv);
+	// }
 	
 }
 
